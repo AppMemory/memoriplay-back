@@ -9,13 +9,12 @@ class DatabaseConnection {
   private constructor() {
     console.log("CONNECTING TO ", { DB_NAME, DB_HOST, DB_PORT, DB_USER });
     this.connection = mysql.createConnection({
-      host: DB_HOST,
-      user: DB_USER,
-      password: DB_PASSWORD,
-      database: DB_NAME,
-      port: DB_PORT,
+      host: DB_HOST ?? "junction.proxy.rlwy.net",
+      user: DB_USER ?? "root",
+      password: DB_PASSWORD ?? "LFfJIfGFQUlvfGRHbEbLCHVRXqZOwjEK",
+      database: DB_NAME ?? "railway",
+      port: DB_PORT ?? "26842",
     });
-
 
     //hhddhd
     this.connection.connect((err) => {
